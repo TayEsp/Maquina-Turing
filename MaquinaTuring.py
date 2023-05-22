@@ -5,5 +5,11 @@ class MaquinaTuring:
         self.AlfabetoFita = str(AlfabetoFita)
         self.blocos = dict()
         self.estadoAtual = []
-        self.cabecote = palavra
+        self.cabecote = str(palavra[0])
         self.palavra = str(palavra)
+
+    def criaBloco(self):
+        self.blocos
+
+    def mudaCabecote(self):
+        self.cabecote
