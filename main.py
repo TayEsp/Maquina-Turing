@@ -23,9 +23,9 @@ def Menu(tipo):
         number = input("Quantos passos deseja passar: ")
         parada = True
         while(parada):
+            parada = MT.step(number)
             tipo = input("Forneça opção (r, v, s): ")
             Menu(tipo)
-            parada = MT.step(number)
         return parada
     else:
         print('opcao Invalida')

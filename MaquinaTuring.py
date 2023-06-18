@@ -34,24 +34,24 @@ class MaquinaTuring:
         estados = []
 
         for linha in self.Codigo:
-            palavras = linha.split()
+            estado = linha.split()
             #retirando os comentarios
-            if ';' in palavras:
+            if ';' in estado:
                 pass
             #colocando os blocos na chave do dicinario e colocando so estados dentro do conteudo
-            elif 'bloco' in palavras:
+            elif 'bloco' in estado:
                 if chave != None:
                     self.blocos[chave] = estados
                     estados = []
-                chave = str(palavras[1])
-                estados.append(palavras[1:])
+                chave = str(estado[1])
+                estados.append(estado[1:])
             #colocando os estados em listas  
             else:
-                if len(palavras) > 0:
+                if len(estado) > 0:
                     #retirando o separador --
-                    if '--' in palavras:
-                        palavras.remove('--')
-                    estados.append(palavras)
+                    if '--' in estado:
+                        estado.remove('--')
+                    estados.append(estado)
         self.blocos[chave] = estados
         self.mudaBloco('main')
         #for k in self.blocos:
